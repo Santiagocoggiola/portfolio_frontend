@@ -1,0 +1,16 @@
+<p-menubar>
+    <ng-template pTemplate="start">
+      <div class="logo">
+        <!-- Agrega aquí tu imagen de logo -->
+        <img src="assets/logo.png" alt="Logo">
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div>
+        <input type="text" pInputText placeholder="Usuario" class="w-full" />
+        <input type="password" pInputText placeholder="Contraseña" class="w-full" *ngIf="!loggedIn" />
+        <button pButton type="button" label="Login" ></button>
+        <button pButton type="button"  label="Logout" *ngIf="loggedIn"></button>
+      </div>
+    </ng-template>
+</p-menubar>

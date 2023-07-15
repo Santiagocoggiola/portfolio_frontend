@@ -1,12 +1,9 @@
-<p-card [header]="title" [subheader]="position" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="https://upload.wikimedia.org/wikipedia/commons/5/58/UBP_V_D_1-m.png" />
-    </ng-template>
-    <h3 *ngIf="to !== ''">
-        {{from}}-Present
-    </h3>
-    <h3 *ngIf="to === ''">
-        {{from}}-{{to}}
-    </h3>
-    <p>{{content}}</p>
-</p-card>
+<div class="card">
+  <div class="logo">
+    <img [src]="logoUrl" alt="Logo">
+  </div>
+  <h2>{{ title }}</h2>
+  <h3>{{ position }}</h3>
+  <h4>{{ from }}{{ to !== '' ? '-Present' : '-' + to }}</h4>
+  <p>{{ content }}</p>
+</div>

@@ -7,8 +7,8 @@
     </ng-template>
     <ng-template pTemplate="end">
       <div>
-        <input type="text" pInputText placeholder="Usuario" class="w-full" />
-        <input type="password" pInputText placeholder="Contraseña" class="w-full" *ngIf="!loggedIn" />
+        <input type="text" pInputText placeholder="Usuario"  />
+        <input type="password" pInputText placeholder="Contraseña"  *ngIf="!loggedIn" />
         <button pButton type="button" label="Login" ></button>
         <button pButton type="button"  label="Logout" *ngIf="loggedIn"></button>
       </div>

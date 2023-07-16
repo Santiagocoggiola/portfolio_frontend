@@ -1,0 +1,10 @@
+<div class="grid dir-col card-container mt-5">
+    <div class="grid flex justify-content-center flex-wrap"> 
+      <div class="flex align-items-center justify-content-center col-12 md-6 lg-4 mb-4" *ngFor="let card of cards">
+        <div class="card">
+          <app-card [card]="card"></app-card>
+        </div>
+      </div>
+    </div>
+</div>
+  

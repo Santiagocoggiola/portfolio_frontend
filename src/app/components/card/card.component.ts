@@ -1,15 +1,21 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css'],
+  animations: [
+    trigger('slideInLeft', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('0.5s ease-in-out', style({ transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
-export class CardComponent {
-  @Input() logoUrl: string = '';
-  @Input() title: string = 'Universidad Blas Pascal';
-  @Input() position: string = '';
-  @Input() from: string = '2013';
-  @Input() to: string = '2015';
-  @Input() content: string = 'Computer Engeniring';
+export class CardComponent implements OnInit {
+  @Input() card: any;
+
+  ngOnInit() {}
 }

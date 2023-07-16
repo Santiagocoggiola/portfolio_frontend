@@ -23,105 +23,93 @@ export class ParticleBackgroundComponent {
 
   /* or the classic JavaScript object */
   particlesOptions = {
-    background: {
-      color: "#000000",
-    },
-    fpsLimit: 120,
-    fullScreen: {
-      zIndex: -1,
+    fpsLimit: 60,
+    interactivity: {
+      detectsOn: InteractivityDetect.canvas,
+      events: {
+        onClick: {
+          enable: false,
+          mode: ClickMode.push,
+        },
+        onHover: {
+          enable: false,
+          mode: HoverMode.repulse,
+          parallax: {
+            enable: false,
+            force: 60,
+            smooth: 10,
+          },
+        },
+        resize: true,
+      },
+      modes: {
+        bubble: { distance: 400, duration: 2, opacity: 0.8, size: 40, speed: 3 },
+        grab: { distance: 400, lineLinked: { opacity: 1 } },
+        push: { particlesNb: 4 },
+        remove: { particlesNb: 2 },
+        repulse: { distance: 200, duration: 0.4 },
+      },
     },
     particles: {
-      color: {
-        value: this.generateRandomColor(), // Genera un color aleatorio de la paleta
-        animation: {
-          enable: true,
-          speed: 10,
-        },
+      color: { value: '#00b33c' },
+      links: {
+        color: '#00b33c',
+        distance: 150,
+        enable: true,
+        opacity: 0.8,
+        width: 1,
       },
       move: {
-        attract: {
-          enable: false,
-          distance: 100,
-          rotate: {
-            x: 2000,
-            y: 2000,
-          },
-        },
+        attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        bounce: false,
         direction: MoveDirection.none,
         enable: true,
-        outModes: {
-          default: OutMode.bounce,
-          bottom: OutMode.bounce,
-          left: OutMode.bounce,
-          right: OutMode.bounce,
-          top: OutMode.bounce,
-        },
-        path: {
-          clamp: false,
-          enable: true,
-          delay: {
-            value: 0,
-          },
-          generator: "polygon",
-          options: {
-            sides: 6,
-            turnSteps: 30,
-            angle: 30,
-          },
-        },
+        outMode: OutMode.bounce,
         random: false,
-        speed: 3,
+        speed: 8,
         straight: false,
-        trail: {
-          fillColor: "#000000",
-          length: 10,
-          enable: true,
-          delay: 0.1, // Controla la velocidad de desvanecimiento de la estela
-        },
       },
-      number: {
-        density: {
-          enable: true,
-          area: 800,
-        },
-        value: 0,
-      },
+      number: { density: { enable: false, value_area: 800 }, value: 100 }, // Aumentar el valor aquí
       opacity: {
+        anim: { enable: true, opacityMin: 0.5, speed: 1, sync: false },
+        random: false,
         value: 1,
       },
       shape: {
-        type: "circle",
+        character: {
+          fill: true,
+          font: 'Roboto',
+          style: '',
+          value: ['0', '1'],
+          weight: '400',
+        },
+        image: {
+          height: 100,
+          replaceColor: true,
+          src: 'images/github.svg',
+          width: 100,
+        },
+        polygon: { nbSides: 5 },
+        stroke: { color: '#ffffff', width: 1 },
+        type: 'char',
       },
       size: {
-        value: 2,
+        anim: { enable: true, sizeMin: 10, speed: 10, sync: false },
+        random: false,
+        value: 10,
       },
     },
-    emitters: {
-      direction: MoveDirection.none,
-      rate: {
-        quantity: 1,
-        delay: 0.25,
-      },
-      size: {
-        width: 0,
-        height: 0,
-      },
-      position: {
-        x: 50,
-        y: 50,
-      },
-    },
-    width: '100%',
-    height: '100%',
-    collisions: {
-      enable: true,
-      bounce: {
-        horizontal: true,
-        vertical: true,
-      },
+    polygon: {
+      draw: { enable: false, lineColor: '#00b33c', lineWidth: 0.5 },
+      move: { radius: 10 },
+      scale: 1,
+      type: 'none',
+      url: '',
     },
     detectRetina: true,
   };
+
+
   
   
   generateRandomColor() {

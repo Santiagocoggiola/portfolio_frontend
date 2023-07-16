@@ -1,12 +1,13 @@
-<p-card [header]="title" [subheader]="position" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="https://upload.wikimedia.org/wikipedia/commons/5/58/UBP_V_D_1-m.png" />
-    </ng-template>
-    <h3 *ngIf="to !== ''">
-        {{from}}-Present
-    </h3>
-    <h3 *ngIf="to === ''">
-        {{from}}-{{to}}
-    </h3>
-    <p>{{content}}</p>
-</p-card>
+<div class="grid dir-col card" [@slideInLeft]>
+  <div class="col logo flex align-items-center flex-wrap pl-4">
+    <img [src]="card.logoUrl" alt="Logo" class="flex align-items-center justify-content-center">
+  </div>
+  <div class="col d-flex align-items-center">
+    <div class="pr-4">
+      <h2 class="mb-3">{{ card.title }}</h2>
+      <h3 class="mb-3">{{ card.position }}</h3>
+      <h4 class="mb-3">{{ card.from }}{{ card.to !== '' ? '-Present' : '-' + card.to }}</h4>
+      <p class="mb-3">{{ card.content }}</p>
+    </div>
+  </div>
+</div>

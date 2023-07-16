@@ -1,9 +1,13 @@
-<div class="card">
-  <div class="logo">
-    <img [src]="logoUrl" alt="Logo">
+<div class="grid dir-col card" [@slideInLeft]>
+  <div class="col logo flex align-items-center flex-wrap pl-4">
+    <img [src]="card.logoUrl" alt="Logo" class="flex align-items-center justify-content-center">
   </div>
-  <h2>{{ title }}</h2>
-  <h3>{{ position }}</h3>
-  <h4>{{ from }}{{ to !== '' ? '-Present' : '-' + to }}</h4>
-  <p>{{ content }}</p>
+  <div class="col d-flex align-items-center">
+    <div class="pr-4">
+      <h2 class="mb-3">{{ card.title }}</h2>
+      <h3 class="mb-3">{{ card.position }}</h3>
+      <h4 class="mb-3">{{ card.from }}{{ card.to !== '' ? '-Present' : '-' + card.to }}</h4>
+      <p class="mb-3">{{ card.content }}</p>
+    </div>
+  </div>
 </div>

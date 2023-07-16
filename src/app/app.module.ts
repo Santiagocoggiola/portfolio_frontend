@@ -13,13 +13,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CardComponent } from './components/card/card.component';
+import { CardContainerComponent } from './components/card-container/card-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParticleBackgroundComponent,
     NavbarComponent,
-    CardComponent
+    CardComponent,
+    CardContainerComponent
   ],
   imports: [
     BrowserModule,

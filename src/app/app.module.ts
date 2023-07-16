@@ -14,6 +14,9 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CardComponent } from './components/card/card.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { SidebarModule } from 'primeng/sidebar';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { CardContainerComponent } from './components/card-container/card-contain
     ParticleBackgroundComponent,
     NavbarComponent,
     CardComponent,
-    CardContainerComponent
+    CardContainerComponent,
+    SideBarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +38,8 @@ import { CardContainerComponent } from './components/card-container/card-contain
     NgParticlesModule,
     BrowserAnimationsModule,
     MenubarModule,
+    PanelMenuModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

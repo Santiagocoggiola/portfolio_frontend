@@ -51,9 +51,9 @@ export class ParticleBackgroundComponent {
       },
     },
     particles: {
-      color: { value: '#00b33c' },
+      color: { value: '#81C784' },
       links: {
-        color: '#00b33c',
+        color: '#81C784',
         distance: 150,
         enable: true,
         opacity: 0.8,

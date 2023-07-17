@@ -10,4 +10,16 @@
       <p class="mb-3">{{ card.content }}</p>
     </div>
   </div>
+  <ng-container *ngIf="isLoggedIn">
+    <p-button icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+  </ng-container>
 </div>
+
+<!-- Componente del modal -->
+<app-card-edit-modal
+  [displayModal]="displayModal"
+  [isEditing]="true"
+  [cardToEdit]="card"
+  (onSave)="onSaveCard($event)"
+  (onCancel)="onCancelModal()"
+></app-card-edit-modal>

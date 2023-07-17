@@ -17,7 +17,11 @@ import { CardContainerComponent } from './components/card-container/card-contain
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { SidebarModule } from 'primeng/sidebar';
-
+import { DialogModule } from '@angular/cdk/dialog';
+import { DialogModule as PrimeNgDialogModule} from 'primeng/dialog';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ReactiveFormsModule} from '@angular/forms';
+import { CardEditModalComponent } from './components/card-edit-modal/card-edit-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,8 @@ import { SidebarModule } from 'primeng/sidebar';
     NavbarComponent,
     CardComponent,
     CardContainerComponent,
-    SideBarComponent
+    SideBarComponent,
+    CardEditModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,10 @@ import { SidebarModule } from 'primeng/sidebar';
     MenubarModule,
     PanelMenuModule,
     SidebarModule,
+    DialogModule,
+    FileUploadModule,
+    ReactiveFormsModule,
+    PrimeNgDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,14 +14,19 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CardComponent } from './components/card/card.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
-
+import { DialogModule } from '@angular/cdk/dialog';
+import { DialogModule as PrimeNgDialogModule} from 'primeng/dialog';
+import {FileUploadModule} from 'primeng/fileupload';
+import {ReactiveFormsModule} from '@angular/forms';
+import { CardEditModalComponent } from './components/card-edit-modal/card-edit-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
     ParticleBackgroundComponent,
     NavbarComponent,
     CardComponent,
-    CardContainerComponent
+    CardContainerComponent,
+    CardEditModalComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,10 @@ import { CardContainerComponent } from './components/card-container/card-contain
     NgParticlesModule,
     BrowserAnimationsModule,
     MenubarModule,
+    DialogModule,
+    FileUploadModule,
+    ReactiveFormsModule,
+    PrimeNgDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

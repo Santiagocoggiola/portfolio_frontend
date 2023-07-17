@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Card } from 'src/app/domain/types';
+import { CardEditModalComponent } from '../card-edit-modal/card-edit-modal.component';
+import { Dialog } from '@angular/cdk/dialog'
 
 @Component({
   selector: 'app-card-container',
@@ -34,20 +36,32 @@ export class CardContainerComponent {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper convallis tortor non pretium.'
     }
   ];
+  constructor(public dialog: Dialog) {
 
-  cardRows: Card[][] = []; 
-
-  constructor() {
-    this.cardRows = this.chunkArray(this.cards, 3); 
-    console.log(this.cardRows)
   }
 
-  chunkArray(array: any[], size: number): any[] {
-    const result = [];
-    for (let i = 0; i < array.length; i += size) {
-      result.push(array.slice(i, i + size));
-    }
-    return result;
-  }
+  isLoggedIn = true; // Aquí debes establecer el valor de isLoggedIn según tus necesidades
 
+  // Resto del código
+
+  // Función para mostrar el modal para agregar una nueva card
+  showAddCardModal(): void {
+    const dialogRef = this.dialog.open(CardEditModalComponent, {
+      width: '90vw',
+      data: {
+        isEditing: false // Establecemos isEditing en false para agregar una nueva card
+      }
+    });
+
+    // Escuchar el evento onSave del modal para guardar la nueva card
+    dialogRef.closed.subscribe((newCardData) => {
+      // Aquí puedes guardar la nueva card en tu lista de cards
+      // newCardData contendrá los datos del formulario del modal
+      if (newCardData) {
+        // Solo si el usuario hizo clic en el botón "Save" en el modal, newCardData contendrá los datos.
+        // Puedes agregar la nueva card a la lista de cards o hacer cualquier otra operación necesaria.
+        this.cards.push(newCardData);
+      }
+    });
+  }
 }

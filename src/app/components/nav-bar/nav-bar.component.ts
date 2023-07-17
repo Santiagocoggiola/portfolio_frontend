@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
   loggedIn = false; // Variable para controlar el estado de inicio de sesión
+  sidebarVisible = false;
+  
+  toggleSidebar() {
+    this.sidebarVisible = !this.sidebarVisible;
+  }
 }

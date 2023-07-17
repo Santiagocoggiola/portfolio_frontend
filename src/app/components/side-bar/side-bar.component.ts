@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
   menuItems: any[];
-
-  sidebarVisible: boolean = false;
+  @Input() sidebarVisible: boolean = false;
 
   constructor(private router: Router) {
     this.menuItems = [
@@ -36,7 +35,5 @@ export class SideBarComponent {
     ];
   }
 
-  toggleSidebar() {
-    this.sidebarVisible = !this.sidebarVisible;
-  }
+  
 }

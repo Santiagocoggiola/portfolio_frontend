@@ -2,3 +2,10 @@
     background-color: #161d21 !important; /* Establece el color de fondo en negro */
     color: #000000 !important; /* Establece el color del texto en blanco */
   }
+
+  .sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+  }

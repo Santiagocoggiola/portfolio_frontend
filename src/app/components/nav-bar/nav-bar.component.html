@@ -1,16 +1,23 @@
 <p-menubar>
-    <ng-template pTemplate="start">
-      <div class="logo">
+  <ng-template pTemplate="start">
+    <div class="d-flex align-items-center">
+      <button type="button" pButton icon="pi pi-bars" class="sidebar-toggle mt-1" (click)="toggleSidebar()"></button>
+      <div class="logo pl-8">
         <!-- Agrega aquí tu imagen de logo -->
         <img src="assets/logo.png" alt="Logo">
       </div>
-    </ng-template>
-    <ng-template pTemplate="end">
-      <div>
-        <input type="text" pInputText placeholder="Usuario"  />
-        <input type="password" pInputText placeholder="Contraseña"  *ngIf="!loggedIn" />
-        <button pButton type="button" label="Login" ></button>
-        <button pButton type="button"  label="Logout" *ngIf="loggedIn"></button>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="d-flex align-items-center">
+      <div class="p-d-flex">
+        <input type="text" pInputText placeholder="Usuario" class="mr-2" />
+        <input type="password" pInputText placeholder="Contraseña" *ngIf="!loggedIn" class="mr-2" />
+        <button pButton type="button" label="Login" class="mr-2"></button>
+        <button pButton type="button" label="Logout" *ngIf="loggedIn"></button>
       </div>
-    </ng-template>
+    </div>
+  </ng-template>
 </p-menubar>
+
+<app-side-bar [sidebarVisible]="sidebarVisible"></app-side-bar>

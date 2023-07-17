@@ -14,6 +14,9 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { CardComponent } from './components/card/card.component';
 import { CardContainerComponent } from './components/card-container/card-container.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { SidebarModule } from 'primeng/sidebar';
 import { DialogModule } from '@angular/cdk/dialog';
 import { DialogModule as PrimeNgDialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
@@ -26,7 +29,8 @@ import { CardEditModalComponent } from './components/card-edit-modal/card-edit-m
     NavbarComponent,
     CardComponent,
     CardContainerComponent,
-    CardEditModalComponent
+    SideBarComponent,
+    CardEditModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { CardEditModalComponent } from './components/card-edit-modal/card-edit-m
     NgParticlesModule,
     BrowserAnimationsModule,
     MenubarModule,
+    PanelMenuModule,
+    SidebarModule,
     DialogModule,
     FileUploadModule,
     ReactiveFormsModule,

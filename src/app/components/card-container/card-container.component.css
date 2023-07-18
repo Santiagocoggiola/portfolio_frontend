@@ -24,3 +24,14 @@
     }
   }
   
+
+  .container-title {
+    padding: 10px;
+    max-width: 100%;
+    text-align: start; /* Alineación del título a la izquierda */
+    margin-bottom: 20px;
+  }
+  
+  .container-title h2 {
+    margin: 0; /* Eliminar margen predeterminado del h2 */
+  }

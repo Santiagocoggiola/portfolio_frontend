@@ -22,6 +22,11 @@ import { DialogModule as PrimeNgDialogModule} from 'primeng/dialog';
 import {FileUploadModule} from 'primeng/fileupload';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CardEditModalComponent } from './components/card-edit-modal/card-edit-modal.component';
+import { EducationComponent } from './components/education/education.component';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { MessageService } from 'primeng/api';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,7 @@ import { CardEditModalComponent } from './components/card-edit-modal/card-edit-m
     CardContainerComponent,
     SideBarComponent,
     CardEditModalComponent,
+    EducationComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,8 +55,10 @@ import { CardEditModalComponent } from './components/card-edit-modal/card-edit-m
     FileUploadModule,
     ReactiveFormsModule,
     PrimeNgDialogModule,
+    MessagesModule,
+    MessageModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

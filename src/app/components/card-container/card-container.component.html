@@ -1,6 +1,10 @@
-<!-- Agregamos el botón si isLoggedIn es true -->
+
+
 <div class="grid dir-col card-container mt-5">
   <div class="grid flex justify-content-center flex-wrap">
+    <div class="container-title">
+      <h1>{{title}}</h1>
+    </div>
     <div class="flex align-items-center justify-content-center col-12 md-6 lg-4 mb-4" *ngFor="let card of cards">
       <div class="card">
         <app-card [card]="card"></app-card>
@@ -8,7 +12,16 @@
     </div>
     <!-- Mostramos el botón solo si isLoggedIn es true -->
     <div class="flex align-items-center justify-content-center col-12 md-6 lg-4 mb-4" *ngIf="isLoggedIn">
-      <p-button icon="pi pi-plus" styleClass="p-button-rounded" (click)="showAddCardModal()"></p-button>
+      <p-button icon="pi pi-plus" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
     </div>
   </div>
 </div>
+
+
+<app-card-edit-modal
+  [displayModal]="displayModal"
+  [isEditing]="false"
+  [cardToEdit]="{}"
+  (onSave)="onSaveCard($event)"
+  (onCancel)="onCancelModal()"
+></app-card-edit-modal>

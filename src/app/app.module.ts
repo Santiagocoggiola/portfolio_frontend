@@ -26,6 +26,7 @@ import { EducationComponent } from './components/education/education.component';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { MessageService } from 'primeng/api';
+import { ExperienceComponent } from './components/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MessageService } from 'primeng/api';
     SideBarComponent,
     CardEditModalComponent,
     EducationComponent,
+    ExperienceComponent,
   ],
   imports: [
     BrowserModule,

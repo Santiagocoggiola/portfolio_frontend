@@ -1,0 +1,21 @@
+  
+  .about-me-title {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  
+  .about-me-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  
+  .card {
+    background-color: #161d21;
+    border: 1px solid #ccc;
+    max-width: fit-content;
+    max-height: fit-content;
+    border-radius: 8px;
+    padding: 10px;
+  }

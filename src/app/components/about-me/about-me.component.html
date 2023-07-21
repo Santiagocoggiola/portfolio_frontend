@@ -1,0 +1,22 @@
+<div class="flex justify-content-center flex-wrap mt-8">
+    
+    <p-card [header]="aboutMe.title" subheader="Santiago Coggiola" class="flex align-items-center justify-content-center card">
+      <ng-template pTemplate="header">
+        <img alt="Card" [src]="aboutMe.imgUrl" />
+      </ng-template>
+      <p>
+        {{aboutMe.content}}
+      </p>
+      <!-- Mostrar el botón solo si el usuario está logged in -->
+      <ng-template pTemplate="footer">
+        <p-button  *ngIf="loggedIn" icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+  
+<app-about-me-edit 
+  [displayModal]="displayModal"
+  [aboutMe]="aboutMe"
+  (onSave)="onSaveCard($event)"
+  (onCancel)="onCancelModal()">
+</app-about-me-edit>

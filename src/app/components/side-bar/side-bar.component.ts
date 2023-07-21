@@ -15,7 +15,7 @@ export class SideBarComponent {
       {
         label: 'About me',
         icon: 'pi pi-user',
-        routerLink: '/about'
+        routerLink: '/'
       },
       {
         label: 'Education',

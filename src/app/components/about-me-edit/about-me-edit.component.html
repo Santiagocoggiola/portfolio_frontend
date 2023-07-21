@@ -1,0 +1,52 @@
+<p-dialog header="{{ 'Edit About Me' }}" [(visible)]="displayModal" [modal]="true" [style]="{'width': '90vw', 'max-width': '900px'}" [styleClass]="responsiveClass" (onHide)="onCancelClick()">
+    <form [formGroup]="editForm" class="p-grid p-dir-col px-3 py-2">
+      <div class="grid dir-row p-fluid">
+        <div class="col">
+          <div>
+            <label for="title" class="mr-2">Title</label>
+            <input type="text" pInputText formControlName="title">
+          </div>
+        </div>
+      </div>
+      <div class="grid dir-row p-fluid">
+        <div class="col">
+          <label for="content" class="mr-2">Content</label>
+        </div>
+      </div>
+      <div class="grid dir-row p-fluid">
+        <div class="col">
+          <textarea pInputTextarea formControlName="content" style="width: 30vw; height: 30vh;"></textarea>
+        </div>
+      </div>
+      <div class="grid dir-row p-fluid">
+        <div class="col">
+          <p-fileUpload [maxFileSize]="5242880" id="image" [multiple]="false"
+                        accept=".png,.svg"
+                        [auto]="true" chooseLabel="Browse Image"
+                        [showUploadButton]="false"
+                        (onSelect)="onFileSelected($event)" [customUpload]="false">
+            <ng-template pTemplate="toolbar">
+              <div *ngIf="!fileLoaded">
+                <br>
+              </div>
+            </ng-template>
+            <ng-template let-file pTemplate="file">
+              <div class="col">
+                <span class="mr-3">{{file.name}}</span>
+                <span class="xl-2 lg-2 md-2">{{fileSizeIntoMB(file.size)}}</span>
+              </div>
+            </ng-template>
+          </p-fileUpload>
+        </div>
+      </div>
+    </form>
+  
+    <div class="grid justify-end mt-3 px-3">
+      <button pButton type="button" class="p-button-secondary mr-4" (click)="onCancelClick()">Cancel</button>
+      <button pButton type="button" class="p-button-primary" (click)="onSaveClick()">Save</button>
+    </div>
+    <div *ngIf="loading" class="loading-overlay">
+      <div class="loading-spinner"></div>
+    </div>
+  </p-dialog>
+  

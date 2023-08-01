@@ -32,22 +32,40 @@ export class ParticleBackgroundComponent {
           mode: ClickMode.push,
         },
         onHover: {
-          enable: false,
-          mode: HoverMode.repulse,
+          enable: true, // Habilitar interacción al pasar el mouse por encima
+          mode: HoverMode.repulse, // Puedes cambiar el modo según tus preferencias
           parallax: {
             enable: false,
-            force: 60,
+            force: 80,
             smooth: 10,
           },
         },
         resize: true,
       },
       modes: {
-        bubble: { distance: 400, duration: 2, opacity: 0.8, size: 40, speed: 3 },
-        grab: { distance: 400, lineLinked: { opacity: 1 } },
-        push: { particlesNb: 4 },
-        remove: { particlesNb: 2 },
-        repulse: { distance: 200, duration: 0.4 },
+        bubble: {
+          distance: 400,
+          duration: 2,
+          opacity: 0.8,
+          size: 40,
+          speed: 3,
+        },
+        grab: {
+          distance: 400,
+          lineLinked: {
+            opacity: 1,
+          },
+        },
+        push: {
+          particlesNb: 4,
+        },
+        remove: {
+          particlesNb: 2,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+        },
       },
     },
     particles: {
@@ -60,7 +78,11 @@ export class ParticleBackgroundComponent {
         width: 1,
       },
       move: {
-        attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        attract: {
+          enable: false,
+          rotateX: 600,
+          rotateY: 1200,
+        },
         bounce: false,
         direction: MoveDirection.none,
         enable: true,
@@ -109,7 +131,6 @@ export class ParticleBackgroundComponent {
     detectRetina: true,
   };
 
-
   
   
   generateRandomColor() {
@@ -128,11 +149,11 @@ export class ParticleBackgroundComponent {
   
 
   particlesLoaded(container: Container): void {
-    console.log(container);
+    
   }
 
   async particlesInit(engine: Engine): Promise<void> {
-    console.log(engine);
+    
 
     // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready

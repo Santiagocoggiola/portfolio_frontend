@@ -1,0 +1,27 @@
+<div>
+    <div class="footer-content">
+      <a [href]="footer.gitHubUrl" target="_blank">
+        <i class="pi pi-github mr-2" style="font-size: 24px;"></i>
+        GitHub
+      </a>
+      <div>
+        <p-button *ngIf="loggedIn" icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+      </div>
+    </div>
+    <div class="footer-content mt-4">
+      <a [href]="footer.linkedInUrl" target="_blank">
+        <i class="pi pi-linkedin mr-2" style="font-size: 24px;"></i>
+        LinkedIn
+      </a>
+    </div>
+    
+  </div>
+
+<app-footer-edit
+  [displayModal]="displayModal"
+  [footer]="footer"
+  (onSave)="onSaveFooter($event)"
+  (onCancel)="onCancelModal()">
+
+</app-footer-edit>
+  

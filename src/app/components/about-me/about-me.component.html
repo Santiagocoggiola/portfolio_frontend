@@ -1,0 +1,17 @@
+<div class="about-me-card" [@enterAnimation]>
+  <div class="profile-picture">
+    <img [src]="aboutMe.imgUrl" alt="My Profile Picture" />
+  </div>
+  <h2>{{ aboutMe.title }}</h2>
+  <p>{{ aboutMe.content }}</p>
+  <!-- Otros elementos y contenido de la tarjeta aquí -->
+  <!-- Botón si isLoggedIn está activa -->
+  <p-button *ngIf="loggedIn" icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+</div>
+  
+<app-about-me-edit 
+  [displayModal]="displayModal"
+  [aboutMe]="aboutMe"
+  (onSave)="onSaveCard($event)"
+  (onCancel)="onCancelModal()">
+</app-about-me-edit>

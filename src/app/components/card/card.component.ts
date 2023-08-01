@@ -17,13 +17,17 @@ import { DialogModule } from 'primeng/dialog';
 })
 export class CardComponent implements OnInit {
   @Input() card: Card = {};
-  isLoggedIn = true;
+  @Input() isLoggedIn = false;
   displayModal = false;
 
   ngOnInit() {}
 
   openEditModal(): void {
     this.displayModal = true;
+  }
+
+  openDeleteModal(): void {
+  
   }
 
   onCancelModal(): void {

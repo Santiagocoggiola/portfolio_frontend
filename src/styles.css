@@ -7,5 +7,13 @@
 
 body {
     background-color: black;
-    color: white; /* Si deseas cambiar el color del texto a blanco para que sea legible en el fondo negro */
+    color: white;
 }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  

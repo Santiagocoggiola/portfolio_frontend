@@ -11,7 +11,12 @@
     </div>
   </div>
   <ng-container *ngIf="isLoggedIn">
-    <p-button icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+    <div class="mr-3">
+      <p-button icon="pi pi-pencil" styleClass="p-button-rounded" (click)="openEditModal()"></p-button>
+    </div>
+    <div>
+      <p-button icon="pi pi-times" styleClass="p-button-rounded p-button-danger" (click)="openDeleteModal()"></p-button>
+    </div>
   </ng-container>
 </div>
 

@@ -15,7 +15,7 @@ export class SideBarComponent {
       {
         label: 'About me',
         icon: 'pi pi-user',
-        routerLink: '/about'
+        routerLink: '/'
       },
       {
         label: 'Education',
@@ -28,9 +28,14 @@ export class SideBarComponent {
         routerLink: '/experience'
       },
       {
-        label: 'Contact',
-        icon: 'pi pi-envelope',
-        routerLink: '/contact'
+        label: 'Tecnologies',
+        icon: 'pi pi-desktop',
+        routerLink: '/tecnologies'
+      },
+      {
+        label: 'Projects',
+        icon: 'pi pi-images',
+        routerLink: '/projects'
       }
     ];
   }

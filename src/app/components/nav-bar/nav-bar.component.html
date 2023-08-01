@@ -1,4 +1,4 @@
-<p-menubar>
+<p-menubar [baseZIndex]="10000">
   <ng-template pTemplate="start">
     <div class="d-flex align-items-center">
       <button type="button" pButton icon="pi pi-bars" class="sidebar-toggle mt-1" (click)="toggleSidebar()"></button>
@@ -11,10 +11,10 @@
   <ng-template pTemplate="end">
     <div class="d-flex align-items-center">
       <div class="p-d-flex">
-        <input type="text" pInputText placeholder="Usuario" class="mr-2" />
-        <input type="password" pInputText placeholder="Contraseña" *ngIf="!loggedIn" class="mr-2" />
-        <button pButton type="button" label="Login" class="mr-2"></button>
-        <button pButton type="button" label="Logout" *ngIf="loggedIn"></button>
+        <input type="text" pInputText placeholder="Usuario"  *ngIf="!isLoggedIn" class="mr-2" />
+        <input type="password" pInputText placeholder="Contraseña" *ngIf="!isLoggedIn" class="mr-2" />
+        <button pButton type="button" label="Login" class="mr-2" *ngIf="!isLoggedIn" (click)="logIn()"></button>
+        <button pButton type="button" label="Logout" *ngIf="isLoggedIn" (click)="logOut()"></button>
       </div>
     </div>
   </ng-template>

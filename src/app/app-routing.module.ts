@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ExperienceComponent
   },
   {
-    path: 'contact',
+    path: 'projects',
     component: AppComponent
   }
 ];

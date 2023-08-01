@@ -1,21 +1,54 @@
-  
-  .about-me-title {
-    text-align: left;
-    margin-bottom: 20px;
-  }
-  
-  
-  .about-me-image {
-    max-width: 100%;
-    height: auto;
-  }
+.about-me-card {
+  background-color: rgba(22, 29, 33, 0.5);
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  
-  .card {
-    background-color: #161d21;
-    border: 1px solid #ccc;
-    max-width: fit-content;
-    max-height: fit-content;
-    border-radius: 8px;
+.profile-picture {
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+  .about-me-card {
     padding: 10px;
   }
+
+  .profile-picture img {
+    max-width: 150px;
+  }
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .about-me-card {
+    padding: 15px;
+  }
+
+  .profile-picture img {
+    max-width: 180px;
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media screen and (min-width: 992px) {
+  .about-me-card {
+    padding: 20px;
+  }
+
+  .profile-picture img {
+    max-width: 200px;
+  }
+}

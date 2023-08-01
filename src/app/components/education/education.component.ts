@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Card } from 'src/app/domain/types';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-education',
@@ -7,6 +8,8 @@ import { Card } from 'src/app/domain/types';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent {
+  constructor(private dataSharingService: DataSharingService){}
+  isLoggedIn : boolean = false;
   cards: Card[] = [
     {
       logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/58/UBP_V_D_1-m.png',
@@ -33,4 +36,7 @@ export class EducationComponent {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper convallis tortor non pretium.'
     }
   ];
+  ngOnInit(){
+    this.isLoggedIn = this.dataSharingService.getLoggedIn();
+  }
 }

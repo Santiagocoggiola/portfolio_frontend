@@ -14,3 +14,9 @@ export interface AboutMe {
   content?: string;
   imgUrl?: string;
 }
+
+export interface Footer {
+  id?: number;
+  gitHubUrl? : string;
+  linkedInUrl? : string;
+}

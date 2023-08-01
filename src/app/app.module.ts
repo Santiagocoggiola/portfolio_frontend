@@ -29,6 +29,8 @@ import { MessageService } from 'primeng/api';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { AboutMeEditComponent } from './components/about-me-edit/about-me-edit.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FooterEditComponent } from './components/footer-edit/footer-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { AboutMeEditComponent } from './components/about-me-edit/about-me-edit.c
     ExperienceComponent,
     AboutMeComponent,
     AboutMeEditComponent,
+    FooterComponent,
+    FooterEditComponent,
   ],
   imports: [
     BrowserModule,

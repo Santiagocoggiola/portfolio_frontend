@@ -20,15 +20,15 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class CardContainerComponent implements OnInit{
   @Input() title:string = ''; 
   @Input() cards : Card[] = [];
+  @Input() isLoggedIn = false;
   displayModal = false;
-  isLoggedIn = true; // Aquí debes establecer el valor de isLoggedIn según tus necesidades
 
   constructor(public dialog: Dialog) {
 
   }
 
   ngOnInit(): void {
-    console.log(this.cards)
+    
   }
   
 
@@ -36,6 +36,10 @@ export class CardContainerComponent implements OnInit{
 
   openEditModal(): void {
     this.displayModal = true;
+  }
+
+  openDeleteModal(): void {
+    
   }
 
   onCancelModal(): void {

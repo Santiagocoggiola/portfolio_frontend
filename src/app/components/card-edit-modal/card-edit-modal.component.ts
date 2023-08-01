@@ -14,7 +14,7 @@ export class CardEditModalComponent implements OnInit {
   @Input() displayModal = false;
   @Input() isEditing = false; 
   @Input() cardToEdit: Card = {}; 
-
+  
   @Output() onSave = new EventEmitter<any>();
   @Output() onCancel = new EventEmitter<void>();
 
@@ -42,7 +42,7 @@ export class CardEditModalComponent implements OnInit {
     this.updateForm();
 
     this.imageUrl = this.isEditing ? this.cardToEdit.logoUrl : undefined;
-    console.log(this.isEditing)
+    
   }
 
   updateForm(): void {

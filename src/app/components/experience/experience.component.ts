@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Card } from 'src/app/domain/types';
+import { DataSharingService } from 'src/app/services/data-sharing.service';
 
 @Component({
   selector: 'app-experience',
@@ -7,6 +8,9 @@ import { Card } from 'src/app/domain/types';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent {
+  constructor(private dataSharingService: DataSharingService){}
+  isLoggedIn : boolean = false;
+  
   cards: Card[] = [
     {
       logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/58/UBP_V_D_1-m.png',
@@ -33,4 +37,8 @@ export class ExperienceComponent {
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ullamcorper convallis tortor non pretium.'
     }
   ];
+
+  ngOnInit(){
+    this.isLoggedIn = this.dataSharingService.getLoggedIn();
+  }
 }
